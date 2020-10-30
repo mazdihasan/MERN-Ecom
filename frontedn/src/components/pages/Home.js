@@ -2,10 +2,18 @@ import React from 'react'
 import {Link} from 'react-router-dom';
 import ProductCard from '../ProductCard';
 import data from '../../data';
+import Header from '../Header';
 export default function Home() {
     const products = data.products;
     return (
         <>
+            <Header cl="header">
+				<div className="caption">
+				<h1>FASHION AND CREATIVITY</h1>	 
+				<p>Sed dapibus est a lorem dictum, id dignissim lacus fermentum. Nulla ut nibh in libero maximus pretium
+				Nunc vulputate vel tellus ac elementum. Duis nec tincidunt dolor, ac dictum eros.</p>
+				</div>
+			</Header>
       <div className="categoires">
         <div className="container">
           <Link to="#"><div className="col-md-4 sections fashion-grid-a">

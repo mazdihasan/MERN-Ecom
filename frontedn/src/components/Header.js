@@ -1,19 +1,19 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-export default function Header() {
+export default function Header(props) {
     return (
         <>
-            <div className="header">
+            <div className={`text-center ${props.cl}`}>
                 <div className="container">
                 <div className="main-header">
                     <div className="carting">
-                        <ul><li><Link to="login.html"> LOGIN</Link></li></ul>
+                        <ul><li><Link to="/login"> LOGIN</Link></li></ul>
                         </div>
                     <div className="logo">
-                        <h3><Link to="index.html">NEW FASHIONS</Link></h3>
+                        <h3><Link to="/">NEW FASHIONS</Link></h3>
                     </div>			  
                     <div className="box_1">				 
-                        <Link to="cart.html"><h3>Cart: <span className="simpleCart_total"></span> (<span id="simpleCart_quantity" className="simpleCart_quantity"></span> items)<img src="images/cart.png" alt=""/></h3></Link>
+                        <Link to="/cart"><h3>Cart: <span className="simpleCart_total"></span> (<span id="simpleCart_quantity" className="simpleCart_quantity"></span> items)<img src="images/cart.png" alt=""/></h3></Link>
                         <p><Link to="" className="simpleCart_empty">empty cart</Link></p>
                     
                     </div>
@@ -23,7 +23,7 @@ export default function Header() {
                     
                     {/*-- start header menu -- */}
             <ul className="megamenu skyblue">
-                <li className="active grid"><Link className="color1" to="index.html">Home</Link></li>
+                <li className="active grid"><Link className="color1" to="/">Home</Link></li>
                 <li className="grid"><Link to="#">Women</Link>
                     <div className="megapanel">
                         <div className="row">
@@ -179,7 +179,7 @@ export default function Header() {
                         </div>
                         </div>
                     </li>
-                <li className="grid"><Link to="about.html">ABOUT US</Link></li>
+                <li className="grid"><Link to="/about">ABOUT US</Link></li>
                     <li className="grid"><Link to="blog.html">BLOG</Link></li>				
                     <li><Link to="#">SHOP ONLINE</Link>
                     <div className="megapanel">
@@ -263,12 +263,12 @@ export default function Header() {
                     </ul> 			 
                     <div className="clearfix"></div>			   	
             </div>
-                <div className="caption">
-                <h1>FASHION AND CREATIVITY</h1>	 
-                <p>Sed dapibus est a lorem dictum, id dignissim lacus fermentum. Nulla ut nibh in libero maximus pretium
-                Nunc vulputate vel tellus ac elementum. Duis nec tincidunt dolor, ac dictum eros.</p>
-                </div>
+                {props.children}
             </div>            
         </>
     )
+}
+
+Header.defaultProps= {
+    cl:"header2"
 }

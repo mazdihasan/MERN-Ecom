@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 function ProductCard({product}) {
     return (
         <div className="product-grid">
-            <Link to="single.html">					  
+            <Link to={`/products/${product.slug}`}>					  
             <div className="more-product-info"><span>NEW</span></div>						
             <div className="product-img b-link-stripe b-animate-go  thickbox">						   
                 <img src={product.image} className="img-responsive" alt=""/>
